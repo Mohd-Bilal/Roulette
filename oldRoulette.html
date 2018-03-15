@@ -3,6 +3,14 @@
 <title>Dhwani</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style> 
+body{
+  background-image: url("mandala");
+  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:  43% 30%; 
+}
+
 canvas {
     padding-left: 0;
     padding-right: 0;
@@ -10,20 +18,50 @@ canvas {
     margin-left: auto;
     margin-right: auto;
     display: block;
-}</style>
+}
+.btn {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+ }
+
+/* Demo Stuff End -> */
+
+/* <- Magic Stuff Start */
+
+.btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.btn-1 {
+  background-image: linear-gradient(to right, #f8c62a 0%, #f3633a 51%, #ecc241 100%);
+}
+
+</style>
 
 <body>
-    <input type="button" value="spin" onclick="spin();" style="float:left;" />
-    <canvas id="canvas" width="600" height="600"></canvas>
+  <img src="Bohemian" style="position: fixed;width:350px;left:35%;"/>
+    <canvas id="canvas" width="600" height="500"></canvas>
+    <input type="button" value="spin" onclick="spin();" style="margin-top:30px;padding-top: 15px;
+    padding-bottom: 15px;margin-left:43%;border-width: 0px;" class="btn btn-1"/>
+    
     <script>
     var colors = ["#B8D430", "#3AB745", "#029990", "#3501CB",
              "#2E2C75", "#673A7E", "#CC0071", "#F80120",
              "#F35B20", "#FB9A00", "#FFCC00", "#FEF200"];
 var restaraunts = ["ProShow", "Mug Splash", "Gamer's Cave", "OOPS",
-                   "ATV Voucher", "Egg Smash", "Rs 100 Voucher", "OOPS",
+                   "ATV Voucher", "Egg Smash", "Rs 50 Voucher", "OOPS",
                    "Dhwani T-Shirt", "OOPS", "Chocolate", "Pillow Slap"];
 
-                   var prizes = ["ProShow", "Gamer's Cave","ATV Voucher", "Rs 100 Voucher","Dhwani T-Shirt"];
+                   var prizes = ["ProShow", "Gamer's Cave","ATV Voucher", "Rs 50 Voucher","Dhwani T-Shirt"];
 
 var startAngle = 0;
 var arc = Math.PI / 6;
@@ -52,7 +90,7 @@ function drawRouletteWheel() {
    
    
     ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 1;
    
     ctx.font = 'bold 12px Helvetica, Arial';
    
@@ -81,14 +119,14 @@ function drawRouletteWheel() {
     //Arrow
     ctx.fillStyle = "black";
     ctx.beginPath();
-    ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
-    ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
-    ctx.lineTo(250 + 4, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 + 9, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 + 0, 250 - (outsideRadius - 13));
-    ctx.lineTo(250 - 9, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 - 4, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 - 4, 250 - (outsideRadius + 5));
+    ctx.moveTo(250 - 10, 250 - (outsideRadius + 12));
+    ctx.lineTo(250 + 10, 250 - (outsideRadius + 12));
+    ctx.lineTo(250 + 10, 250 - (outsideRadius - 12));
+    ctx.lineTo(250 + 22, 250 - (outsideRadius - 12));
+    ctx.lineTo(250 + 0, 250 - (outsideRadius - 32));
+    ctx.lineTo(250 - 22, 250 - (outsideRadius - 12));
+    ctx.lineTo(250 - 10, 250 - (outsideRadius - 12));
+    ctx.lineTo(250 - 10, 250 - (outsideRadius + 12 ));
     ctx.fill();
   }
 }
